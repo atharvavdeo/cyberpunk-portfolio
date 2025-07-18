@@ -5,6 +5,10 @@
 
 ---
 
+![Website Preview](screenshot.png)
+
+---
+
 ## 🚀 Live Demo
 
 🔗 **Try it here**: [https://atharvavdeo.github.io/cyberpunk-portfolio](https://atharvavdeo.github.io/cyberpunk-portfolio)
@@ -34,3 +38,7 @@
 | **Vanilla JS** | Floating particles + smooth scroll    |
 
 ---
+
+### 📌 Disclaimer
+
+> 🛠 **Note**: The skills, projects, and content displayed on this website are **for demonstration purposes only**. They are designed to showcase the design, layout, and aesthetic of a cyberpunk-themed portfolio. The data is placeholder and not an accurate representation of Atharva Deo’s actual experience or work.
