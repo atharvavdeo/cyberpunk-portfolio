@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharva Deo - Proff Coder</title>
+   <link rel="stylesheet" href="portfoliostyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-cyan: #00ffff;
+            --neon-green: #39ff14;
+            --neon-yellow: #ffff00;
+            --dark-bg: #0a0a0a;
+            --retro-purple: #8b5cf6;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .retro-font {
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), inset 0 0 20px rgba(255, 0, 255, 0.1);
+            border: 2px solid #ff00ff;
+        }
+        
+        .cyber-grid {
+            background-image: 
+                linear-gradient(cyan 1px, transparent 1px),
+                linear-gradient(90deg, cyan 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+        }
+        
+        .glitch-effect {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .retro-card {
+            background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .retro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 255, 0.3);
+        }
+        
+        .pulse-neon {
+            animation: pulse-neon 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-neon {
+            from { box-shadow: 0 0 20px rgba(255, 0, 255, 0.5); }
+            to { box-shadow: 0 0 30px rgba(255, 0, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.3); }
+        }
+        
+        .retro-button {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .retro-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .retro-button:hover::before {
+            left: 100%;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #00ffff;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ffff; }
+        }
+        
+        .scanning-line {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanning-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: scan 3s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-50 backdrop-blur-md border-b border-purple-500">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="retro-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                    ATHARVA.EXE
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-pink-400 transition-colors">HOME</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">ABOUT</a>
+                    <a href="#projects" class="hover:text-green-400 transition-colors">PROJECTS</a>
+                    <a href="#contact" class="hover:text-yellow-400 transition-colors">CONTACT</a>
+                </div>
+                <button class="md:hidden text-2xl">≡</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="cyber-grid absolute inset-0"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="mb-8">
+                <h1 class="retro-font text-6xl md:text-8xl font-black mb-4 glitch-effect">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 neon-text">
+                        ATHARVA DEO
+                    </span>
+                </h1>
+                <div class="text-2xl md:text-3xl font-light typewriter text-cyan-400">
+                    Proff Coder & Designer
+                </div>
+            </div>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
+                Crafting digital experiences in the CYBERPUNK style!!
+            </p>
+            <button class="retro-button text-black font-bold py-4 px-8 rounded-lg text-lg transition-all hover:scale-105">
+                ENTER THE MATRIX
+            </button>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-pink-500 rounded-full pulse-neon"></div>
+        <div class="absolute bottom-32 right-20 w-6 h-6 bg-cyan-500 rounded-full pulse-neon"></div>
+        <div class="absolute top-1/2 left-20 w-3 h-3 bg-green-400 rounded-full pulse-neon"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="retro-font text-4xl md:text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                SYSTEM_INFO.EXE
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="retro-card p-8 rounded-lg scanning-line">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-4 h-4 bg-green-400 rounded-full pulse-neon"></div>
+                            <span class="text-green-400 font-mono">STATUS: ONLINE</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-cyan-400 font-mono">USER: Atharva Deo</div>
+                            <div class="text-pink-400 font-mono">ROLE: 2nd Yr Engineer</div>
+                            <div class="text-yellow-400 font-mono">EXP: 2+ Years</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Welcome to my digital realm. I'm a passionate developer who lives at the intersection of creativity and technology, building experiences that push the boundaries of what's possible.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        My expertise spans across modern web technologies, with a special love for creating immersive user interfaces that feel like they're from the future.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-gradient-to-r from-purple-900 to-pink-900 rounded-lg">
+                            <div class="text-3xl font-bold text-cyan-400">3+</div>
+                            <div class="text-sm text-gray-300">Projects Completed</div>
+                        </div>
+                        <div class="text-center p-4 bg-gradient-to-r from-blue-900 to-cyan-900 rounded-lg">
+                            <div class="text-3xl font-bold text-pink-400">2+</div>
+                            <div class="text-sm text-gray-300">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="retro-font text-4xl md:text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
+                SKILL_TREE.DAT
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="retro-card p-6 rounded-lg text-center group">
+                    <div class="text-4xl mb-4 text-pink-500">⚡</div>
+                    <h3 class="retro-font text-xl font-bold mb-4 text-cyan-400">Frontend</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <div>React / Vue.js</div>
+                        <div>TypeScript</div>
+                        <div>Tailwind CSS</div>
+                    </div>
+                </div>
+                <div class="retro-card p-6 rounded-lg text-center group">
+                    <div class="text-4xl mb-4 text-green-400">🖥️</div>
+                    <h3 class="retro-font text-xl font-bold mb-4 text-pink-400">Backend</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <div>Node.js</div>
+                        <div>Python</div>
+                    </div>
+                </div>
+                <div class="retro-card p-6 rounded-lg text-center group">
+                    <div class="text-4xl mb-4 text-cyan-400">🚀</div>
+                    <h3 class="retro-font text-xl font-bold mb-4 text-yellow-400">DevOps</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <div>Docker</div>
+                        <div>AWS</div>
+                        <div>CI/CD</div>
+                        <div>Kubernetes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="retro-font text-4xl md:text-6xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-600">
+                PORTFOLIO.ZIP
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="retro-card p-6 rounded-lg group">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🌌</div>
+                    </div>
+                    <h3 class="retro-font text-xl font-bold mb-2 text-cyan-400">NeoCorp Dashboard</h3>
+                    <p class="text-gray-300 mb-4">A cyberpunk-themed admin dashboard with real-time data visualization</p>
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-pink-600 text-xs rounded">React</span>
+                        <span class="px-2 py-1 bg-cyan-600 text-xs rounded">D3.js</span>
+                        <span class="px-2 py-1 bg-green-600 text-xs rounded">Node.js</span>
+                    </div>
+                </div>
+                <div class="retro-card p-6 rounded-lg group">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🎮</div>
+                    </div>
+                    <h3 class="retro-font text-xl font-bold mb-2 text-pink-400">Retro Game Engine</h3>
+                    <p class="text-gray-300 mb-4">A WebGL-based game engine with 80s-style graphics and sound</p>
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-pink-600 text-xs rounded">WebGL</span>
+                        <span class="px-2 py-1 bg-cyan-600 text-xs rounded">Three.js</span>
+                        <span class="px-2 py-1 bg-green-600 text-xs rounded">Web Audio</span>
+                    </div>
+                </div>
+                <div class="retro-card p-6 rounded-lg group">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-yellow-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🤖</div>
+                    </div>
+                    <h3 class="retro-font text-xl font-bold mb-2 text-green-400">AI Chat Interface</h3>
+                    <p class="text-gray-300 mb-4">A futuristic chat interface with AI-powered responses</p>
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-pink-600 text-xs rounded">Vue.js</span>
+                        <span class="px-2 py-1 bg-cyan-600 text-xs rounded">Python</span>
+                        <span class="px-2 py-1 bg-green-600 text-xs rounded">OpenAI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="retro-font text-4xl md:text-6xl font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-600">
+                CONNECT.EXE
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-xl mb-8 text-gray-300">
+                    Ready to build something amazing together? Let's connect and create the future.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <a href="mailto:alex@example.com" class="retro-card p-6 rounded-lg hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2 text-pink-500">📧</div>
+                        <div class="text-cyan-400 font-mono">EMAIL</div>
+                    </a>
+                    <a href="#" class="retro-card p-6 rounded-lg hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2 text-green-400">🔗</div>
+                        <div class="text-cyan-400 font-mono">LINKEDIN</div>
+                    </a>
+                    <a href="#" class="retro-card p-6 rounded-lg hover:scale-105 transition-transform">
+                        <div class="text-3xl mb-2 text-yellow-400">🐙</div>
+                        <div class="text-cyan-400 font-mono">GITHUB</div>
+                    </a>
+                </div>
+                <button class="retro-button text-black font-bold py-4 px-8 rounded-lg text-lg transition-all hover:scale-105">
+                    INITIATE CONTACT
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-purple-500">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 font-mono">
+                © 2025 Atharva Deo. All rights reserved. | SYSTEM_STATUS: OPERATIONAL
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.retro-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Random floating elements animation
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.className = 'absolute w-2 h-2 bg-cyan-400 rounded-full opacity-50';
+            element.style.left = Math.random() * 100 + '%';
+            element.style.top = Math.random() * 100 + '%';
+            element.style.animation = 'pulse 2s ease-in-out infinite';
+            document.body.appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 10000);
+        }
+
+        // Create floating elements periodically
+        setInterval(createFloatingElement, 3000);
+    </script>
+</body>
+</html>
